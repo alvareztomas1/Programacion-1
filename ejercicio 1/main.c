@@ -3,18 +3,34 @@
 
 int main()
 {
-    int i;
+    int valor;
+    int min;
+    int max;
+    int flag;
+    char rta;
 
+    flag=0;
 
-    i=5232;
+    do
+    {
+        printf ("ingrese un valor: ");
+        scanf ("%d", &valor);
 
-   for (i=0;i<10;i++)
-   {
-       printf ("%d\n", i+1);
-   }
+        if (flag==0 || valor>max)
+        {
+            max=valor;
+        }
+        if (flag==0 || valor<min)
+        {
+            min=valor;
 
+        }
 
+        flag++;
+    }while (flag<5);
 
+    printf ("el valor maximo es %d\n", max);
+    printf ("el valor minimo es %d", min);
     return 0;
 }
 
@@ -29,7 +45,113 @@ int main()
 
 
 
+
+
+
+
+
+
+//------------------------------------------------------------------
 /*
+    int contador;
+    int nota;
+    int acumulador;
+    float promedio;
+
+    contador=0;
+    acumulador=0;
+
+    do
+    {
+        printf ("Ingrese su nota: ");
+        scanf ("%d", &nota);
+
+        acumulador=nota+acumulador;
+
+
+        contador++;
+    }
+    while (contador<5);
+    promedio=(float)acumulador/contador;
+    printf ("la suma de notas es %d\n", acumulador);
+    printf ("el promedio de notas da %1.f ", promedio);
+
+*/
+//------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------
+/*
+char hora;
+
+    printf ("ingrese la hora: ");
+    fflush (stdin);
+    scanf ("%c", &hora);
+
+    switch (hora)
+    {
+        case '0':
+        case '1':
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+            printf ("a dormir");
+            break;
+        case '7':
+        case '8':
+            printf ("buenos dias");
+            break;
+
+        default:
+            printf ("no es una hora valida");
+            break;
+    }
+*/
+//-------------------------------------------------------------------------------
+/*int hora;
+
+    printf ("ingrese la hora: ");
+    scanf ("%d", &hora);
+
+    switch (hora)
+    {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+            printf ("a dormir");
+            break;
+        case 7:
+        case 8:
+        case 9:
+            printf ("buenos dias");
+            break;
+        case 10:
+        case 11:
+        case 12:
+        case 13:
+        case 14:
+        case 15:
+        case 16:
+        case 17:
+        case 18:
+        case 19:
+        case 20:
+        case 21:
+        case 22:
+        case 23:
+            printf ("es de noche");
+            break;
+        default:
+            printf ("no es una hora valida"
+            break;
+    }
+//------------------------------------------------------------------------------
+
     int numero2 = 34;
     float altura = 23.5;
     char letra = 'a';
@@ -42,14 +164,7 @@ int main()
     printf ("la letra vale %c\n", letra);
 
     */
-
-
-
-
-
-
-
-
+//------------------------------------------------------------------------------
     /*
     int numero;
     int numero1;
@@ -67,3 +182,4 @@ int main()
 
     printf ("el resultado da %.1f", resultado);
     */
+//------------------------------------------------------------------------------0
