@@ -3,17 +3,22 @@
 
 int main()
 {
-    int numero;
+    int i;
 
 
-    printf ("ingrese un numero: ");
-    scanf("%d", &numero);
+    i=5232;
 
-    printf ("ingreso el numero %d", numero);
+   for (i=0;i<10;i++)
+   {
+       printf ("%d\n", i+1);
+   }
+
 
 
     return 0;
 }
+
+
 
 
 
@@ -36,4 +41,29 @@ int main()
     printf ("la variable numero vale %d y la variable numero2 vale %d\n", numero , numero2);
     printf ("la letra vale %c\n", letra);
 
+    */
+
+
+
+
+
+
+
+
+    /*
+    int numero;
+    int numero1;
+    float resultado;
+
+    printf ("ingrese un numero: ");
+    scanf ("%d", &numero);
+
+    printf ("ingrese el segundo numero: ");
+    scanf ("%d", &numero1);
+
+
+
+    resultado=(float)numero/numero1;
+
+    printf ("el resultado da %.1f", resultado);
     */
