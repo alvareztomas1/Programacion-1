@@ -1,9 +1,74 @@
 #include <stdio.h>
 #include <stdlib.h>
+int factorial (int);
 
+ main()
+{   //FACTORIAL
+
+    int num;
+    int result;
+
+    do
+    {
+    printf ("ingrese un numero positivo: ");
+    scanf ("\n%d", &num);
+    }
+    while (num<-1);
+
+    result = factorial(num);
+    printf ("el factorial da %d", result);
+
+    return 0;
+}
+int factorial(int num)
+{
+    int contador;
+
+    contador=1;
+
+    for (num;num!=0;num--)
+    {
+        if (contador==1)
+        {
+            contador=num;
+        }
+        else
+        {
+            contador=contador*num;
+        }
+    }
+    return contador;
+}
+
+/*
+
+-----PASAJE POR REFERENCIA-----
 int main()
 {
-    int valor;
+    int x,y;
+
+    printf ("ingrese: ");
+    scanf ("%d", &x);
+    printf ("ingrese: ");
+    scanf ("%d", &y);
+
+    muestra (&x,y);
+
+    printf ("x: &d  y:%d", x,y);
+
+    return 0;
+}
+void muestra (int *x, int y)
+{
+    *x=y;
+    printf ("x: %d  y: &d",*x,y);
+}
+*/
+/*
+
+-----VALOR MAXIMO Y MINIMO-----
+
+int valor;
     int min;
     int max;
     int flag;
@@ -31,27 +96,9 @@ int main()
 
     printf ("el valor maximo es %d\n", max);
     printf ("el valor minimo es %d", min);
-    return 0;
-}
+    */
+//------------------------REPASO--------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//------------------------------------------------------------------
 /*
     int contador;
     int nota;
