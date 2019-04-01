@@ -1,11 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+
+main ()
+{
+    printf ("hola");
+}
+
+
+
+
+
+
+
+
+
+
+/*
+------------------------FACTORIAL----------------------
 int factorial (int);
 
- main()
-{   //FACTORIAL
 
-    int num;
+ int num;
     int result;
 
     do
@@ -38,9 +54,8 @@ int factorial(int num)
         }
     }
     return contador;
-}
 
-/*
+
 
 -----PASAJE POR REFERENCIA-----
 int main()
@@ -63,8 +78,7 @@ void muestra (int *x, int y)
     *x=y;
     printf ("x: %d  y: &d",*x,y);
 }
-*/
-/*
+
 
 -----VALOR MAXIMO Y MINIMO-----
 
@@ -96,10 +110,10 @@ int valor;
 
     printf ("el valor maximo es %d\n", max);
     printf ("el valor minimo es %d", min);
-    */
+
 //------------------------REPASO--------------------------------
 
-/*
+
     int contador;
     int nota;
     int acumulador;
@@ -123,11 +137,11 @@ int valor;
     printf ("la suma de notas es %d\n", acumulador);
     printf ("el promedio de notas da %1.f ", promedio);
 
-*/
+
 //------------------------------------------------------------------------------
 
 //------------------------------------------------------------------------------
-/*
+
 char hora;
 
     printf ("ingrese la hora: ");
@@ -154,9 +168,9 @@ char hora;
             printf ("no es una hora valida");
             break;
     }
-*/
+
 //-------------------------------------------------------------------------------
-/*int hora;
+int hora;
 
     printf ("ingrese la hora: ");
     scanf ("%d", &hora);
@@ -210,9 +224,9 @@ char hora;
     printf ("la variable numero vale %d y la variable numero2 vale %d\n", numero , numero2);
     printf ("la letra vale %c\n", letra);
 
-    */
+
 //------------------------------------------------------------------------------
-    /*
+
     int numero;
     int numero1;
     float resultado;
