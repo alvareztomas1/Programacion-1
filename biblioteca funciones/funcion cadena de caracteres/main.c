@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int cadena (char cadena[], char* mensaje);
+int cadena (char cadena[64], char* mensaje);
 
 int main()
 {
@@ -19,7 +19,7 @@ int cadena (char cadena[64], char* mensaje)
 {
     int cantidad;
 
-    printf("%s :", mensaje);
+    printf("%s ", mensaje);
 
     fgets(cadena,sizeof(cadena)-2,stdin);
 
