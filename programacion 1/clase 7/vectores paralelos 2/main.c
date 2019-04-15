@@ -5,14 +5,14 @@
 
 int main()
 {
-    char nombres[][20] = { {"Juana"}, {"Jose"},{"Alberto"}, {"Sonia"}, {"Ana"}, {"Pedro"}, {"Sol"}, {"Juan"},{"Felipe"}, {"Beatriz"}};
+    char nombres[][10] = { {"Juana"}, {"Jose"},{"Alberto"}, {"Sonia"}, {"Ana"}, {"Pedro"}, {"Sol"}, {"Juan"},{"Felipe"}, {"Beatriz"}};
     int legajos[] = {234, 453, 112, 876, 543, 857, 322, 207, 765, 923};
     float sueldos[] = { 23500.50, 34000, 45750, 23400, 13200, 28750, 32120, 21600, 29800.50, 55800};
     char sexos[] = { 'f', 'm', 'm', 'f', 'f', 'm', 'f', 'm', 'm', 'f'};
     int auxInt;
     char auxChar;
     float auxFloat;
-    char auxCad[20];
+    char auxCad[10];
 
 
     printf("Nombre   Legajo  Sexo     Sueldo\n\n");
