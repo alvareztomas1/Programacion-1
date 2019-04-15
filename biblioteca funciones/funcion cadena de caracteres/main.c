@@ -2,31 +2,29 @@
 #include <stdlib.h>
 #include <string.h>
 
-int cadena (char cadena[64], char* mensaje);
+void cadena (char vec[],int tam, char* mensaje);
 
 int main()
 {
     char vec[64];
     int result;
 
-    result = cadena(vec[64], "ingrese nombre: ");
+    cadena(vec,64, "ingrese nombre: ");
 
-    printf ("\n\n el nombre ingresado fue: %s", result);
+
 
     return 0;
 }
-int cadena (char cadena[64], char* mensaje)
+void cadena (char vec[],int tam, char* mensaje)
 {
+    char cad[tam];
     int cantidad;
 
-    printf("%s ", mensaje);
+    printf("%s", mensaje);
 
-    fgets(cadena,sizeof(cadena)-2,stdin);
+    fgets(cad,sizeof(cad)-2,stdin);
+    cantidad = strlen(cad);
+    cad[cantidad-1] = '\0';
 
-    cantidad = strlen(cadena);
-
-    cadena[cantidad-1] = '\0';
-
-
-    return cadena;
+    printf ("%s", cad);
 }
