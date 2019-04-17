@@ -13,7 +13,7 @@ int main()
     char salir;
     eEmpleado lista[TAM]; //={{111,"Juan",'m',30000,1},{222,"Ana",'f',20000,1},{33,"Tom",'f',15000,0}, };
 //---------------------------------------------------------------------------------
-    inicializarEstado(lista,TAM);
+     inicializarEstado(lista,TAM);
 //---------------------------------------------------------------------------------
     do
     {
@@ -60,8 +60,8 @@ int main()
             default:
                 printf ("\nNo es una opcion valida\n\n");
                 system("break");
-
             }
+
     }while(seguir=='s');
 
     return 0;

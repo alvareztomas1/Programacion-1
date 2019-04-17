@@ -15,7 +15,7 @@ typedef struct
 
 }eEmpleado;
 int menu(void);
-int inicializarEstado (eEmpleado vec[], int tam);
+void inicializarEstado (eEmpleado vec[], int tam);
 void mostrarEmpleado (eEmpleado emp);
 void mostrarEmpleados (eEmpleado vec[], int tam);
 int buscarLibre (eEmpleado vec[], int tam);

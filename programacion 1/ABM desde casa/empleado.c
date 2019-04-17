@@ -18,7 +18,7 @@ int menu(void)
 }
 //---------------------------------------------------------------------------------
 
-int inicializarEstado (eEmpleado vec[], int tam)
+void inicializarEstado (eEmpleado vec[], int tam)
 {
     for (int i=0;i<tam;i++)
     {
@@ -29,7 +29,7 @@ int inicializarEstado (eEmpleado vec[], int tam)
 
 void mostrarEmpleado (eEmpleado emp)
 {
-    printf ("   %d       %s       %c       %.2f   %0d/%d/%d\n", emp.legajo, emp.nombre, emp.sexo, emp.sueldo, emp.fechaNac.dia, emp.fechaNac.mes, emp.fechaNac.anio);
+    printf ("   %d       %s       %c       %.2f   %.02d/%d/%d\n", emp.legajo, emp.nombre, emp.sexo, emp.sueldo, emp.fechaNac.dia, emp.fechaNac.mes, emp.fechaNac.anio);
 }
 //---------------------------------------------------------------------------------
 
@@ -105,8 +105,11 @@ void altaEmpleado (eEmpleado vec[], int tam)
 
         if (esta!=-1)
         {
-            printf ("Ya esta ocupado ese nro de legajo");
+            printf ("\nEse numero de legajo ya esta ocupado\n");
+            printf (" Legajo     Nombre      Sexo     Sueldo     Nacimiento\n");
             mostrarEmpleado(vec[esta]);
+            printf ("\n");
+
         }
         else
         {
@@ -188,6 +191,7 @@ void bajaEmpleado (eEmpleado vec[], int tam)
 
 }
 //---------------------------------------------------------------------------------
+
 void modificarEmpleado (eEmpleado vec[], int tam)
 {
     int indiceLeg;
