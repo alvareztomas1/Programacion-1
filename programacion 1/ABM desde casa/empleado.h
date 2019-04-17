@@ -12,8 +12,15 @@ typedef struct
     float sueldo;
     int estado;
     eFecha fechaNac;
+    int idSector;
 
 }eEmpleado;
+
+typedef struct
+{
+    int id;
+    char desc[31];
+}
 int menu(void);
 void inicializarEstado (eEmpleado vec[], int tam);
 void mostrarEmpleado (eEmpleado emp);
