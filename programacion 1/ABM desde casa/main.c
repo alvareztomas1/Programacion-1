@@ -11,7 +11,8 @@ int main()
 {
     char seguir='s';
     char salir;
-    eEmpleado lista[TAM]; //={{111,"Juan",'m',30000,1},{222,"Ana",'f',20000,1},{33,"Tom",'f',15000,0}, };
+    eEmpleado lista[TAM];//={{111,"Juan",'m',30000,1},{222,"Ana",'f',20000,1},{33,"Tom",'f',15000,0}, };
+    eSector sector[TAM]={{1,"RRHH"}, {2,"Sistemas"}, {3,"Seguridad"}};
 //---------------------------------------------------------------------------------
     inicializarEstado(lista,TAM);
 //---------------------------------------------------------------------------------
@@ -21,7 +22,7 @@ int main()
         {
             case 1:
                 //printf ("Alta empleado\n");
-                altaEmpleado(lista,TAM);
+                altaEmpleado(lista,TAM, sector);
                 system("pause");
                 break;
             case 2:
@@ -40,7 +41,7 @@ int main()
                 break;
             case 5:
                 //printf ("Listar empleados\n");
-                mostrarEmpleados(lista,TAM);
+                mostrarEmpleados(lista,TAM, sector);
                 system("pause");
                 break;
             case 6:
