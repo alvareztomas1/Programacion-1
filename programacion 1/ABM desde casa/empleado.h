@@ -20,15 +20,13 @@ typedef struct
 {
     int id;
     char desc[31];
-
 }eSector;
-
 int menu(void);
 void inicializarEstado (eEmpleado vec[], int tam);
-void mostrarEmpleado (eEmpleado emp, eSector sec);
-void mostrarEmpleados (eEmpleado vec[], int tam, eSector sec[]);
+void mostrarEmpleado (eEmpleado emp);
+void mostrarEmpleados (eEmpleado vec[], int tam);
 int buscarLibre (eEmpleado vec[], int tam);
 int buscarEmpleado (eEmpleado vec[], int tam, int legajo);
-void altaEmpleado (eEmpleado vec[], int tam, eSector sec[]);
+void altaEmpleado (eEmpleado vec[], int tam);
 void bajaEmpleado (eEmpleado vec[], int tam);
 void modificarEmpleado (eEmpleado vec[], int tam);

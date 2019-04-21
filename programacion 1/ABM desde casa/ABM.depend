@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1555861188 source:c:\users\user\desktop\programacion-1\programacion 1\abm desde casa\main.c
+1555870570 source:c:\users\user\desktop\programacion-1\programacion 1\abm desde casa\main.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -22,12 +22,21 @@
 
 1555505361 c:\users\alumno\desktop\programacion-1\programacion 1\abm desde casa\empleado.h
 
-1555861786 source:c:\users\user\desktop\programacion-1\programacion 1\abm desde casa\empleado.c
+1555870480 source:c:\users\user\desktop\programacion-1\programacion 1\abm desde casa\empleado.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
 	<conio.h>
 	"empleado.h"
 
-1555861772 c:\users\user\desktop\programacion-1\programacion 1\abm desde casa\empleado.h
+1555870533 c:\users\user\desktop\programacion-1\programacion 1\abm desde casa\empleado.h
+
+1555870480 source:c:\users\user\desktop\nueva carpeta\programacion-1\programacion 1\abm desde casa\empleado.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	"empleado.h"
+
+1555870533 c:\users\user\desktop\nueva carpeta\programacion-1\programacion 1\abm desde casa\empleado.h
 

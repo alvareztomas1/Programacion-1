@@ -27,22 +27,22 @@ void inicializarEstado (eEmpleado vec[], int tam)
 }
 //---------------------------------------------------------------------------------
 
-void mostrarEmpleado (eEmpleado emp, eSector sec)
+void mostrarEmpleado (eEmpleado emp)
 {
-    printf ("   %d       %s       %c       %.2f   %.02d/%d/%d      %s\n", emp.legajo, emp.nombre, emp.sexo, emp.sueldo, emp.fechaNac.dia, emp.fechaNac.mes, emp.fechaNac.anio, sec.desc);
+    printf ("   %d       %s       %c       %.2f   %.02d/%d/%d\n", emp.legajo, emp.nombre, emp.sexo, emp.sueldo, emp.fechaNac.dia, emp.fechaNac.mes, emp.fechaNac.anio);
 }
 //---------------------------------------------------------------------------------
 
-void mostrarEmpleados (eEmpleado vec[], int tam, eSector sec[])
+void mostrarEmpleados (eEmpleado vec[], int tam)
 {
     int contador=0;
-    printf ("\n Legajo     Nombre      Sexo     Sueldo     Nacimiento     Sector\n");
+    printf ("\n Legajo     Nombre      Sexo     Sueldo     Nacimiento\n");
 
     for (int i=0;i<tam;i++)
     {
         if (vec[i].estado==1)
         {
-            mostrarEmpleado(vec[i], sec[i]);
+            mostrarEmpleado(vec[i]);
             contador++;
         }
     }
@@ -84,12 +84,11 @@ int buscarEmpleado (eEmpleado vec[], int tam, int legajo)
 }
 //---------------------------------------------------------------------------------
 
-void altaEmpleado (eEmpleado vec[], int tam, eSector sec[])
+void altaEmpleado (eEmpleado vec[], int tam)
 {
     int esta;
     int indice;
     int legajo;
-
 
     indice=buscarLibre(vec, tam);
 
@@ -108,7 +107,7 @@ void altaEmpleado (eEmpleado vec[], int tam, eSector sec[])
         {
             printf ("\nEse numero de legajo ya esta ocupado\n");
             printf (" Legajo     Nombre      Sexo     Sueldo     Nacimiento\n");
-            mostrarEmpleado(vec[esta], sec[esta]);
+            mostrarEmpleado(vec[esta]);
             printf ("\n");
 
         }
@@ -127,7 +126,7 @@ void altaEmpleado (eEmpleado vec[], int tam, eSector sec[])
             printf ("Ingrese sueldo: ");
             scanf ("%f", &vec[indice].sueldo);
 
-            /*printf ("Ingrese dia de nacimiento: ");
+            printf ("Ingrese dia de nacimiento: ");
             scanf ("%d", &vec[indice].fechaNac.dia);
 
             printf ("Ingrese mes de nacimiento: ");
@@ -135,21 +134,10 @@ void altaEmpleado (eEmpleado vec[], int tam, eSector sec[])
 
             printf ("Ingrese anio de nacimiento: ");
             scanf ("%d", &vec[indice].fechaNac.anio);
-            */
 
-            printf ("\n1-RRHH\n2-Sistemas\n3-Seguridad\n\nIngrese sector: ");
-            scanf ("%d", &sec[indice].id);
+            vec[indice].estado = 1;
 
-            if (sec[indice].id>tam || sec[indice].id<=0)
-            {
-                printf ("Opcion no valida\n");
-            }
-            else
-            {
-                vec[indice].estado = 1;
-                printf ("\nAlta empleado exitosa!\n");
-            }
-
+            printf ("Alta empleado exitosa!\n");
         }
 
     }
