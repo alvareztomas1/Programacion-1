@@ -14,6 +14,7 @@ int main()
     char seguir='s';
     char salir;
     char confirmaOrdenar;
+    int mostroSector;
     eEmpleado lista[TAM]={
         {111,"Juan",'m',30000,{01,02,1999},1,1},
         {222,"Ana",'f',20000,{10,6,1980},3,1},
@@ -79,6 +80,18 @@ int main()
                 system("pause");
                 break;
             case 6:
+                //printf ("Mostrar sector\n");
+                printf ("1-Sistemas\n");
+                printf ("2-RRHH\n");
+                printf ("3-Compras\n");
+                printf ("4-Ventas\n");
+                printf ("5-Legales\n");
+                printf ("Ingrese sector: ");
+                scanf ("%d", &mostroSector);
+
+                mostrarSector()
+                break;
+            case 7:
                 printf ("Desea salir? Ingrese s/n: ");
                 fflush(stdin);
                 salir = getche();
