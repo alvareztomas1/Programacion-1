@@ -4,6 +4,7 @@
 #include <ctype.h>
 #include <conio.h>
 #include "empleado.h"
+#include "sector.h"
 
 int menu(void)
 {
@@ -32,7 +33,7 @@ void mostrarEmpleado (eEmpleado emp, eSector sec[], int tamSector)
 {
     char nombreSector[20];
     obtenerSector(nombreSector,sec,tamSector,emp.idSector);
-    printf ("   %d       %s       %c       %.2f   %.02d/%d/%d\n", emp.legajo, emp.nombre, emp.sexo, emp.sueldo, emp.fechaNac.dia, emp.fechaNac.mes, emp.fechaNac.anio);
+    printf ("   %d       %s       %c       %.2f   %.02d/%d/%d   %s\n", emp.legajo, emp.nombre, emp.sexo, emp.sueldo, emp.fechaNac.dia, emp.fechaNac.mes, emp.fechaNac.anio, nombreSector);
 }
 //---------------------------------------------------------------------------------
 
@@ -93,9 +94,6 @@ void altaEmpleado (eEmpleado vec[], int tam, eSector sec[], int tamSector)
     int indice;
     int legajo;
     char auxSec[3];
-    auxSec[0]="RRHH";
-    auxSec[1]="Sistemas";
-    auxSec[2]="Seguridad";
 
     indice=buscarLibre(vec, tam);
 
@@ -282,3 +280,4 @@ void obtenerSector (char vec[],eSector sec[], int tamSec, int id)
         }
     }
 }
+

@@ -14,7 +14,7 @@ int main()
     char seguir='s';
     char salir;
     char confirmaOrdenar;
-    eEmpleado lista[TAM]={{111,"Juan",'m',30000,1},{222,"Ana",'f',20000,1},{33,"Tom",'m',15000,1}, {444,"Julia",'f',50000,1}};
+    eEmpleado lista[TAM]={{111,"Juan",'m',30000,2,1},{222,"Ana",'f',20000,1},{33,"Tom",'m',15000,4,1}};
     eSector sector[TAM_SECTOR]=
     {
         {1,"Sistemas"},
@@ -24,7 +24,7 @@ int main()
         {5,"Legales"},
     };
 //---------------------------------------------------------------------------------
-   inicializarEstado(lista,TAM);
+   //inicializarEstado(lista,TAM);
 //---------------------------------------------------------------------------------
     do
     {
