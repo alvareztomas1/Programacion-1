@@ -28,13 +28,15 @@ void inicializarEstado (eEmpleado vec[], int tam)
 }
 //---------------------------------------------------------------------------------
 
-void mostrarEmpleado (eEmpleado emp)
+void mostrarEmpleado (eEmpleado emp, eSector sec[], int tamSector)
 {
+    char nombreSector[20];
+    obtenerSector(nombreSector,sec,tamSector,emp.idSector);
     printf ("   %d       %s       %c       %.2f   %.02d/%d/%d\n", emp.legajo, emp.nombre, emp.sexo, emp.sueldo, emp.fechaNac.dia, emp.fechaNac.mes, emp.fechaNac.anio);
 }
 //---------------------------------------------------------------------------------
 
-void mostrarEmpleados (eEmpleado vec[], int tam)
+void mostrarEmpleados (eEmpleado vec[], int tam, eSector sec[], int tamSector)
 {
     int contador=0;
     printf ("\n Legajo     Nombre      Sexo     Sueldo     Nacimiento\n");
@@ -43,7 +45,7 @@ void mostrarEmpleados (eEmpleado vec[], int tam)
     {
         if (vec[i].estado==1)
         {
-            mostrarEmpleado(vec[i]);
+            mostrarEmpleado(vec[i], sec, tamSector);
             contador++;
         }
     }
@@ -85,7 +87,7 @@ int buscarEmpleado (eEmpleado vec[], int tam, int legajo)
 }
 //---------------------------------------------------------------------------------
 
-void altaEmpleado (eEmpleado vec[], int tam, eSector sec[])
+void altaEmpleado (eEmpleado vec[], int tam, eSector sec[], int tamSector)
 {
     int esta;
     int indice;
@@ -112,7 +114,7 @@ void altaEmpleado (eEmpleado vec[], int tam, eSector sec[])
         {
             printf ("\nEse numero de legajo ya esta ocupado\n");
             printf (" Legajo     Nombre      Sexo     Sueldo     Nacimiento\n");
-            mostrarEmpleado(vec[esta]);
+            mostrarEmpleado(vec[esta], sec, tamSector);
             printf ("\n");
 
         }
@@ -141,14 +143,8 @@ void altaEmpleado (eEmpleado vec[], int tam, eSector sec[])
             scanf ("%d", &vec[indice].fechaNac.anio);
             */
 
-            printf ("\n1-RRHH\n2-Sistemas\n3-Seguridad\nIngrese sector: ");
-            scanf("%d", &sec[indice].id);
-
-            for (int i=0;i<3;i++)
-            {
-                printf ("%d  %s", sec[i].id, sec[i].desc);
-            }
-
+            printf ("Alta exitosa!!");
+            vec[indice].estado=1;
 
         }
 
@@ -272,6 +268,17 @@ void ordenarEmpleado (eEmpleado vec[], int tam)
                 vec[j].sueldo=auxSueldo;
             }
 
+        }
+    }
+}
+void obtenerSector (char vec[],eSector sec[], int tamSec, int id)
+{
+    for (int i=0;i<tamSec;i++)
+    {
+        if (id==sec[i].id)
+        {
+            strcpy(vec,sec[i].desc);
+            break;
         }
     }
 }
