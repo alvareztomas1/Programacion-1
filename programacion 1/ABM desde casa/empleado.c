@@ -10,7 +10,7 @@ int menu(void)
 {
     int rta;
     printf ("-----------ABM empleados-----------\n\n");
-    printf("\n1-Alta empleado\n2-Baja empleado\n3-Modificacion Empleado\n4-Ordenar\n5-Listar\n6-Mostrar Sector\n7-Salir");
+    printf("\n1-Alta empleado\n2-Baja empleado\n3-Modificacion Empleado\n4-Ordenar\n5-Listar\n6-Listar empleados con sector\n7-Salir");
     fflush (stdin);
     printf ("\n\n");
     printf ("Ingrese opcion: ");
@@ -289,15 +289,17 @@ void mostrarSector (eEmpleado vec[], int tam, eSector sec[], int tamSec)
 
     for (int i=0;i<tamSec;i++)
     {
+        printf ("Sector: %s\n\n", sec[i].desc);
         for (int j=0;j<tam;j++)
         {
-            printf ("Sector: %d\n\n", sec[i].desc);
-
             if((vec[j].idSector==sec[i].id) && vec[j].estado==1)
             {
-                mostrarEmpleados(vec,tam,sec,tamSec);
+                mostrarEmpleado(vec[j],sec,tamSec);
             }
+
         }
     }
+
+    printf ("\n\n");
 }
 

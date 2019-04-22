@@ -80,16 +80,8 @@ int main()
                 system("pause");
                 break;
             case 6:
-                //printf ("Mostrar sector\n");
-                printf ("1-Sistemas\n");
-                printf ("2-RRHH\n");
-                printf ("3-Compras\n");
-                printf ("4-Ventas\n");
-                printf ("5-Legales\n");
-                printf ("Ingrese sector: ");
-                scanf ("%d", &mostroSector);
-
-                mostrarSector()
+                //printf ("Listar sector con sector\n");
+                mostrarSector(lista,TAM,sector,TAM_SECTOR);
                 break;
             case 7:
                 printf ("Desea salir? Ingrese s/n: ");
