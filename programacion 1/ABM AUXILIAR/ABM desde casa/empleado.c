@@ -85,15 +85,12 @@ int buscarEmpleado (eEmpleado vec[], int tam, int legajo)
 }
 //---------------------------------------------------------------------------------
 
-void altaEmpleado (eEmpleado vec[], int tam, eSector sec[])
+void altaEmpleado (eEmpleado vec[], int tam)
 {
     int esta;
     int indice;
     int legajo;
-    char auxSec[3];
-    auxSec[0]="RRHH";
-    auxSec[1]="Sistemas";
-    auxSec[2]="Seguridad";
+    float num;
 
     indice=buscarLibre(vec, tam);
 
@@ -131,7 +128,9 @@ void altaEmpleado (eEmpleado vec[], int tam, eSector sec[])
             printf ("Ingrese sueldo: ");
             scanf ("%f", &vec[indice].sueldo);
 
-            /*printf ("Ingrese dia de nacimiento: ");
+
+
+            printf ("Ingrese dia de nacimiento: ");
             scanf ("%d", &vec[indice].fechaNac.dia);
 
             printf ("Ingrese mes de nacimiento: ");
@@ -139,17 +138,10 @@ void altaEmpleado (eEmpleado vec[], int tam, eSector sec[])
 
             printf ("Ingrese anio de nacimiento: ");
             scanf ("%d", &vec[indice].fechaNac.anio);
-            */
 
-            printf ("\n1-RRHH\n2-Sistemas\n3-Seguridad\nIngrese sector: ");
-            scanf("%d", &sec[indice].id);
+            vec[indice].estado = 1;
 
-            for (int i=0;i<3;i++)
-            {
-                printf ("%d  %s", sec[i].id, sec[i].desc);
-            }
-
-
+            printf ("Alta empleado exitosa!\n");
         }
 
     }
@@ -253,25 +245,20 @@ void modificarEmpleado (eEmpleado vec[], int tam)
 void ordenarEmpleado (eEmpleado vec[], int tam)
 {
     eEmpleado aux;
-    float auxSueldo;
 
     for (int i=0;i<tam-1;i++)
     {
         for (int j=i+1;j<tam;j++)
         {
-            if (vec[i].sexo>vec[j].sexo) //strcmp(vec[i].nombre, vec[j].nombre)>0
+            if (strcmp(vec[i].nombre, vec[j].nombre)>0)
             {
                 aux=vec[i];
                 vec[i]=vec[j];
                 vec[j]=aux;
             }
-            else if (vec[i].sueldo>vec[j].sueldo)
-            {
-                auxSueldo=vec[i].sueldo;
-                vec[i].sueldo=vec[j].sueldo;
-                vec[j].sueldo=auxSueldo;
-            }
-
         }
     }
 }
+
+
+

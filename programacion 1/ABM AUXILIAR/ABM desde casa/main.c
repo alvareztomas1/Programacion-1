@@ -5,7 +5,7 @@
 #include <conio.h>
 #include "empleado.h"
 
-#define TAM 4
+#define TAM 3
 
 //---------------------------------------------------------------------------------
 int main()
@@ -13,8 +13,7 @@ int main()
     char seguir='s';
     char salir;
     char confirmaOrdenar;
-    eEmpleado lista[TAM];//={{111,"Juan",'m',30000,1},{222,"Ana",'f',20000,1},{33,"Tom",'m',15000,1}, {444,"Julia",'f',50000,1}};
-    eSector sector[TAM];
+    eEmpleado lista[TAM];//={{111,"Juan",'m',30000,1},{222,"Ana",'f',20000,1},{33,"Tom",'f',15000,1},};
 //---------------------------------------------------------------------------------
    inicializarEstado(lista,TAM);
 //---------------------------------------------------------------------------------
@@ -24,7 +23,7 @@ int main()
         {
             case 1:
                 //printf ("Alta empleado\n");
-                altaEmpleado(lista,TAM,sector);
+                altaEmpleado(lista,TAM);
                 system("pause");
                 break;
             case 2:
