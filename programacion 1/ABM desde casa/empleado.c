@@ -40,7 +40,7 @@ void mostrarEmpleado (eEmpleado emp, eSector sec[], int tamSector)
 void mostrarEmpleados (eEmpleado vec[], int tam, eSector sec[], int tamSector)
 {
     int contador=0;
-    printf ("\n Legajo     Nombre      Sexo     Sueldo     Nacimiento\n");
+    printf ("\n Legajo     Nombre      Sexo     Sueldo     Nacimiento     Sector\n");
 
     for (int i=0;i<tam;i++)
     {
@@ -54,6 +54,7 @@ void mostrarEmpleados (eEmpleado vec[], int tam, eSector sec[], int tamSector)
     {
         printf ("No hay empleados que listar\n\n");
     }
+
 }
 //---------------------------------------------------------------------------------
 
@@ -248,6 +249,7 @@ void ordenarEmpleado (eEmpleado vec[], int tam)
 {
     eEmpleado aux;
     float auxSueldo;
+    int libre;
 
     for (int i=0;i<tam-1;i++)
     {
@@ -268,6 +270,7 @@ void ordenarEmpleado (eEmpleado vec[], int tam)
 
         }
     }
+
 }
 void obtenerSector (char vec[],eSector sec[], int tamSec, int id)
 {
@@ -277,6 +280,19 @@ void obtenerSector (char vec[],eSector sec[], int tamSec, int id)
         {
             strcpy(vec,sec[i].desc);
             break;
+        }
+    }
+}
+void mostrarSector (eEmpleado vec[], int tam, eSector sec[], int tamSec)
+{
+    for (int i=0;i<tamSec;i++)
+    {
+        for (int j=0;j<tam;i++)
+        {
+            if(sec[i].id==vec[j].idSector)
+            {
+                mostrarEmpleados(vec,tam,sec,tamSec);
+            }
         }
     }
 }

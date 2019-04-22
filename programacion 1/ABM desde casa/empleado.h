@@ -17,7 +17,6 @@ typedef struct
     int idSector;
     int estado;
 
-
 }eEmpleado;
 typedef struct
 {
@@ -39,4 +38,5 @@ void altaEmpleado (eEmpleado vec[], int tam, eSector sec[], int tamSector);
 void bajaEmpleado (eEmpleado vec[], int tam);
 void modificarEmpleado (eEmpleado vec[], int tam);
 void ordenarEmpleado (eEmpleado vec[], int tam);
+void mostrarSector (eEmpleado vec[], int tam, eSector sec[], int tamSec);
 #endif

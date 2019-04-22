@@ -7,7 +7,7 @@
 	<conio.h>
 	"empleado.h"
 
-1555941323 source:c:\users\alumno\desktop\programacion-1\programacion 1\abm desde casa\main.c
+1555943586 source:c:\users\alumno\desktop\programacion-1\programacion 1\abm desde casa\main.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -15,7 +15,7 @@
 	<conio.h>
 	"empleado.h"
 
-1555941583 source:c:\users\alumno\desktop\programacion-1\programacion 1\abm desde casa\empleado.c
+1555943818 source:c:\users\alumno\desktop\programacion-1\programacion 1\abm desde casa\empleado.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -24,7 +24,7 @@
 	"empleado.h"
 	"sector.h"
 
-1555941540 c:\users\alumno\desktop\programacion-1\programacion 1\abm desde casa\empleado.h
+1555943840 c:\users\alumno\desktop\programacion-1\programacion 1\abm desde casa\empleado.h
 	"sector.h"
 
 1555879980 source:c:\users\user\desktop\programacion-1\programacion 1\abm desde casa\empleado.c
