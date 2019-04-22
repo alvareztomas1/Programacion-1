@@ -83,7 +83,12 @@ int main()
                 //printf ("Listar sector con sector\n");
                 mostrarSector(lista,TAM,sector,TAM_SECTOR);
                 break;
+
             case 7:
+
+                mostrarCantidadEmpleadoxSector(lista,TAM,sector,TAM_SECTOR);
+                break;
+            case 8:
                 printf ("Desea salir? Ingrese s/n: ");
                 fflush(stdin);
                 salir = getche();
