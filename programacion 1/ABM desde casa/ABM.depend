@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1555879244 source:c:\users\user\desktop\programacion-1\programacion 1\abm desde casa\main.c
+1555958938 source:c:\users\user\desktop\programacion-1\programacion 1\abm desde casa\main.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -27,15 +27,17 @@
 1555943840 c:\users\alumno\desktop\programacion-1\programacion 1\abm desde casa\empleado.h
 	"sector.h"
 
-1555879980 source:c:\users\user\desktop\programacion-1\programacion 1\abm desde casa\empleado.c
+1555958856 source:c:\users\user\desktop\programacion-1\programacion 1\abm desde casa\empleado.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 	<conio.h>
 	"empleado.h"
+	"sector.h"
 
-1555899618 c:\users\user\desktop\programacion-1\programacion 1\abm desde casa\empleado.h
+1555961682 c:\users\user\desktop\programacion-1\programacion 1\abm desde casa\empleado.h
+	"sector.h"
 
 1555870480 source:c:\users\user\desktop\nueva carpeta\programacion-1\programacion 1\abm desde casa\empleado.c
 	<stdio.h>
@@ -54,4 +56,20 @@
 	<conio.h>
 
 1555941540 c:\users\alumno\desktop\programacion-1\programacion 1\abm desde casa\sector.h
+
+1555961682 c:\users\user\desktop\programacion-1\programacion 1\abm desde casa\sector.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"empleado.h"
+	"sector.h"
+
+1555958145 source:c:\users\user\desktop\programacion-1\programacion 1\abm desde casa\sector.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
 

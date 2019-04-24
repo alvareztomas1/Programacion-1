@@ -1,6 +1,8 @@
 #include "sector.h"
 #ifndef employee_H_INCLUDED
 #define employee_H_INCLUDED
+#ifndef sector_H_INCLUDED
+#define sector_H_INCLUDED
 typedef struct
 {
     int dia, mes, anio;
@@ -18,12 +20,7 @@ typedef struct
     int estado;
 
 }eEmpleado;
-typedef struct
-{
-    int id;
-    char desc[20];
 
-}eSector;
 
 void obtenerSector (char vec[],eSector sec[], int tamSec, int id);
 
@@ -38,5 +35,6 @@ void altaEmpleado (eEmpleado vec[], int tam, eSector sec[], int tamSector);
 void bajaEmpleado (eEmpleado vec[], int tam);
 void modificarEmpleado (eEmpleado vec[], int tam);
 void ordenarEmpleado (eEmpleado vec[], int tam);
-void mostrarSector (eEmpleado vec[], int tam, eSector sec[], int tamSec);
+
+#endif
 #endif
