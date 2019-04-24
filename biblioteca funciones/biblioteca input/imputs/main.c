@@ -1,15 +1,61 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
-int getChar (char min, char max, char* valor, char* mensaje, int intentos, char* msjError);
-
+int getFloat (float min, float max, float* valor, char* mensaje, int intentos, char* msjError);
 
 main()
 {
-    char x;
+    float x;
     int ok;
 
-    ok=getChar('a','c',&x,"Ingrese opcion",3,"Error. solo");
+    ok=getFloat(0,10,&x,"Ingrese un precio",3,"El rango es ");
+
+    if (ok)
+    {
+        printf ("usted ingreso el numero %.2f", x);
+    }
+    else
+    {
+        printf ("no se encontro el dato\n\n\n");
+    }
+    return 0;
+}
+int getFloat (float min, float max, float* valor, char* mensaje, int intentos, char* msjError)
+{
+    float numero;
+    int contador=0;
+    int todoOk=0;
+
+    printf ("%s entre %.2f y %.2f: ", mensaje, min, max);
+    scanf ("%f", &numero);
+
+    while ((numero<min || numero>max) && contador<intentos)
+    {
+        contador++;
+        if (contador==intentos)
+        {
+            break;
+        }
+        printf ("%s entre %.2f y %.2f: ", msjError, min, max);
+        scanf ("%f", &numero);
+    }
+
+
+    if (contador<intentos)
+    {
+        *valor=numero;
+        todoOk=1;
+    }
+
+    return todoOk;
+}
+
+/*
+ char x;
+    int ok;
+
+    ok=getChar('a','c',&x,"Ingrese sexo",3,"Error. solo");
 
     if(ok)
     {
@@ -17,29 +63,35 @@ main()
     }
     else
     {
-        printf ("no se encontro el dato");
+        printf ("Se supero la cantidad de intentos");
     }
 }
 int getChar (char min, char max, char* valor, char* mensaje, int intentos, char* msjError)
 {
-    int caracter;
+    char caracter;
     int todoOk=0;
     int contador=0;
 
     printf ("%s entre %c y %c: ",mensaje, min, max);
     fflush (stdin);
-    scanf ("%c", &caracter);
+    caracter=getche();
+    printf ("\n");
+    system("pause");
 
-    while ((caracter!=min && caracter!=max) && contador<intentos)
+    while ((caracter<min || caracter>max) && contador<intentos)
     {
         contador++;
         if (contador==intentos)
         {
             break;
         }
+
         printf ("%s entre %c y %c: ",msjError, min, max);
         fflush (stdin);
-        scanf ("%c", &caracter);
+        caracter=getche();
+
+        printf ("\n");
+        system("pause");
     }
     if (contador<intentos)
     {
@@ -49,13 +101,6 @@ int getChar (char min, char max, char* valor, char* mensaje, int intentos, char*
 
     return todoOk;
 }
-
-
-
-
-
-
-/*
 ----------------------------------------------------------------------------------------
 int getFloat (float min, float max, float* valor, char* mensaje, int intentos, char* msjError);
 

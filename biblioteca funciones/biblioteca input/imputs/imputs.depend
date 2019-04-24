@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1554160858 source:c:\users\user\desktop\biblioteca imput\imputs\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1555886120 source:c:\users\user\desktop\biblioteca funciones\biblioteca imput\imputs\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+

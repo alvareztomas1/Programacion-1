@@ -19,5 +19,5 @@ void obtenerSector (char vec[],eSector sec[], int tamSec, int id)
 void mostrarSector (eEmpleado vec[], int tam, eSector sec[], int tamSec);
 void mostrarCantidadEmpleadoxSector(eEmpleado vec[], int tam, eSector sec[], int tamSec)
 
-
 #endif
+

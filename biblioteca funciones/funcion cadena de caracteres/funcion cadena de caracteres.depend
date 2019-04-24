@@ -1,9 +1,5 @@
 # depslib dependency file v1.0
-1554570175 source:c:\users\user\desktop\biblioteca funciones\funcion cadena de caracteres\main.c
-	<stdio.h>
-	<stdlib.h>
-
-1555327860 source:c:\users\alumno\desktop\programacion-1\biblioteca funciones\funcion cadena de caracteres\main.c
+1554919249 source:c:\users\user\desktop\biblioteca funciones\funcion cadena de caracteres\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

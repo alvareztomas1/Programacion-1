@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1555962955 source:c:\users\user\desktop\biblioteca funciones\validarchar\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+

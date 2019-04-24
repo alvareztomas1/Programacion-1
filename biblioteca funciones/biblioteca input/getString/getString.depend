@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1554763390 source:c:\users\user\desktop\getstring\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1555884600 source:c:\users\user\desktop\biblioteca funciones\getstring\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

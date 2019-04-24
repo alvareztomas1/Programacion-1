@@ -1,8 +1,7 @@
 #include "sector.h"
 #ifndef employee_H_INCLUDED
 #define employee_H_INCLUDED
-#ifndef sector_H_INCLUDED
-#define sector_H_INCLUDED
+
 typedef struct
 {
     int dia, mes, anio;
@@ -36,5 +35,5 @@ void bajaEmpleado (eEmpleado vec[], int tam);
 void modificarEmpleado (eEmpleado vec[], int tam);
 void ordenarEmpleado (eEmpleado vec[], int tam);
 
-#endif
+
 #endif

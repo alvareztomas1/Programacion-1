@@ -3,8 +3,8 @@
 #include <string.h>
 #include <ctype.h>
 #include <conio.h>
-#include "empleado.h"
 #include "sector.h"
+#include "empleado.h"
 
 int menu(void)
 {
