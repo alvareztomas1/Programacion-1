@@ -4,4 +4,5 @@ git commit -m "clase programacion/laboratorio"
 git config --global user.email "alvareztomas1@hotmail.com"
 git config --global user.name "alvareztomas1"
 git push origin master
+
 git push -f origin master

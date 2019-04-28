@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1556491050 source:c:\users\user\desktop\abm practica\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	"empleados.h"
+	"input.h"
+
+1556148914 source:c:\users\user\desktop\abm practica\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1556491449 source:c:\users\user\desktop\abm practica\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	"empleados.h"
+	"input.h"
+
+1556490774 c:\users\user\desktop\abm practica\empleados.h
+
+1556148084 c:\users\user\desktop\abm practica\input.h
+
