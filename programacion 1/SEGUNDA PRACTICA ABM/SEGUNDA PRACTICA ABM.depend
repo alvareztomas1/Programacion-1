@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1556658857 source:c:\users\user\desktop\segunda practica abm\empleado.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"empleado.h"
+
+1556556607 source:c:\users\user\desktop\segunda practica abm\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1556658460 source:c:\users\user\desktop\segunda practica abm\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	"empleado.h"
+
+1556644782 source:c:\users\user\desktop\segunda practica abm\funciones.c
+	<stdio.h>
+	<stdlib.h>
+
+1556657523 c:\users\user\desktop\segunda practica abm\empleado.h
+
