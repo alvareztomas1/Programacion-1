@@ -21,7 +21,9 @@ int menu()
     printf("5-Alta almuerzo\n");
     printf("6-Listar almuerzo\n");
     printf("7-Listar empleados por sector\n");
-    printf("8-Salir\n");
+    printf("8-Listar cantidad de empleados por sector\n");
+    printf("9-Listar sector con mas empleados\n");
+    printf("10-Salir\n");
 
     printf("\nIngrese opcion: ");
     scanf("%d", &opcion);
@@ -36,7 +38,6 @@ void inicializarEmpleados (eEmpleados emp[], int tamEmp)
     for (int i=0;i<tamEmp;i++)
     {
         emp[i].itsEmpty=1;
-        //emp[i].legajo=0;
     }
 }
 
@@ -97,10 +98,8 @@ int buscarLibre (eEmpleados emp[], int tamEmp)
 
     for (int i=0;i<tamEmp;i++)
     {
-
         if (emp[i].itsEmpty==1)
         {
-
             indiceLibre=i;
             break;
         }
@@ -117,15 +116,11 @@ int buscarLegajo (eEmpleados emp[], int tamEmp, int legajo)
 
     for (int i=0;i<tamEmp;i++)
     {
-
         if (emp[i].itsEmpty==0 && emp[i].legajo==legajo)
         {
-            printf("%d\n", emp[i].legajo);
             indiceLegajo=i;
-
             break;
         }
-
     }
 
     return indiceLegajo;
@@ -181,7 +176,7 @@ void bajaEmpleado (eEmpleados emp[], int tamEmp)
 
     busquedaLegajo=buscarLegajo(emp, tamEmp, legajo);
 
-    if (legajo==-2)
+    if (busquedaLegajo==-2)
     {
         printf("\nLegajo inexistente!!\n\n");
 
@@ -229,6 +224,7 @@ void mostrarEmpleados (eEmpleados emp[], int tamEmp, eSectores sec[], int tamSec
     {
         if (emp[i].itsEmpty==0)
         {
+
             mostrarEmpleado(emp[i], sec, tamSec);
             contador++;
         }
@@ -248,6 +244,7 @@ void copiarSector (char nombreSector[], int id, eSectores sec[], int tamSec)
         if (sec[i].id==id)
         {
             strcpy(nombreSector, sec[i].desc);
+            break;
         }
     }
 }
@@ -268,13 +265,13 @@ void ordenarEmpleados (eEmpleados emp[], int tamEmp)
                 emp[i]=emp[j];
                 emp[j]=aux;
             }
-            /*else if (strcmp(emp[i].apellido, emp[j].apellido)>0 && strcmp(emp[i].nombre, emp[j].nombre)>0)
+            else if (strcmp(emp[i].apellido, emp[j].apellido)>0 && strcmp(emp[i].nombre, emp[j].nombre)>0)
             {
                 aux=emp[i];
                 emp[i]=emp[j];
                 emp[j]=aux;
             }
-            */
+
         }
     }
 }
@@ -382,13 +379,14 @@ int buscarAlmuerzoLibre (eAlmuerzo alm[], int tamAlm)
 
     for (int i=0;i<tamAlm;i++)
     {
-        printf("Indice: %d\n", indiceAlmuerzo);
+
         if (alm[i].itsEmpty==1)
         {
+
             indiceAlmuerzo=i;
-            printf("Indice: %d\n", indiceAlmuerzo);
             break;
         }
+
     }
 
     return indiceAlmuerzo;
@@ -404,7 +402,7 @@ void altaAlmuerzo (eAlmuerzo alm[], int tamAlm, eEmpleados emp[], int tamEmp, eM
     char respuesta;
 
     espacioLibre=buscarAlmuerzoLibre(alm, tamAlm);
-    //printf("Espacio: %d\n", espacioLibre);
+
 
     if (espacioLibre==-2)
     {
@@ -434,15 +432,18 @@ void altaAlmuerzo (eAlmuerzo alm[], int tamAlm, eEmpleados emp[], int tamEmp, eM
                 }
                 printf("\n");
 
-                getInt(&alm[busquedaLegajo].idMenu, "Ingrese opcion: ", "Opcion invalida. Reingrese: ", 1, 5);
-                getInt(&alm[busquedaLegajo].fechaDeAlmuerzo.dia, "Ingrese dia: ", "Fecha no valida. Reingrese: ", 1, 31);
-                getInt(&alm[busquedaLegajo].fechaDeAlmuerzo.mes, "Ingrese mes: ", "Fecha no valida. Reingrese: ", 1, 12);
-                getInt(&alm[busquedaLegajo].fechaDeAlmuerzo.anio, "Ingrese anio: ", "Fecha no valida. Reingrese: ", 2018, 2019);
+                getInt(&alm[espacioLibre].idMenu, "Ingrese opcion: ", "Opcion invalida. Reingrese: ", 1, 5);
+                getInt(&alm[espacioLibre].fechaDeAlmuerzo.dia, "Ingrese dia: ", "Fecha no valida. Reingrese: ", 1, 31);
+                getInt(&alm[espacioLibre].fechaDeAlmuerzo.mes, "Ingrese mes: ", "Fecha no valida. Reingrese: ", 1, 12);
+                getInt(&alm[espacioLibre].fechaDeAlmuerzo.anio, "Ingrese anio: ", "Fecha no valida. Reingrese: ", 2018, 2019);
 
-                alm[busquedaLegajo].legajoEmpleado=legajo;
-                alm[busquedaLegajo].itsEmpty=0;
-                alm[busquedaLegajo].idAlmuerzo=0;
-                alm[busquedaLegajo].idAlmuerzo+=contador;
+
+
+                alm[espacioLibre].itsEmpty=0;
+                alm[espacioLibre].idAlmuerzo=0;
+                alm[espacioLibre].idAlmuerzo+=contador;
+                alm[espacioLibre].legajoEmpleado=legajo;
+
                 printf("\nOperacion exitosa!!\n\n");
 
 
@@ -501,3 +502,63 @@ void mostrarEmpleadosPorSector (eEmpleados emp[], int tamEmp, eSectores sec[], i
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void mostrarCantidadEmpleadosPorSector (eEmpleados emp[], int tamEmp, eSectores sec[], int tamSec)
+{
+    int contador;
+
+    for (int i=0;i<tamSec;i++)
+    {
+        contador=0;
+
+        printf("Sector: %s\n\n", sec[i].desc);
+
+        for (int j=0;j<tamEmp;j++)
+        {
+            if (emp[j].idSector==sec[i].id && emp[j].itsEmpty==0)
+            {
+                contador++;
+
+            }
+        }
+
+        printf("Cantidad empleados: %d\n\n", contador);
+    }
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void mostrarSectorConMasEmpleados (eEmpleados emp[], int tamEmp, eSectores sec[], int tamSec)
+{
+     int contador;
+     int max=0;
+     char nombreSec[51];
+
+    for (int i=0;i<tamSec;i++)
+    {
+        contador=0;
+
+
+
+        for (int j=0;j<tamEmp;j++)
+        {
+            if (emp[j].idSector==sec[i].id && emp[j].itsEmpty==0)
+            {
+                contador++;
+
+                if (contador>max)
+                {
+                    max=contador;
+                    strcpy(nombreSec, sec[i].desc);
+                }
+
+            }
+
+
+        }
+
+    }
+     printf("El sector con mas empleados tiene %d. Y es %s\n", max, nombreSec);
+}
+

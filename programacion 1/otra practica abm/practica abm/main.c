@@ -4,10 +4,10 @@
 #include "input.h"
 #include "funciones.h"
 
-#define TAM_EMPLEADOS 5
+#define TAM_EMPLEADOS 100
 #define TAM_MENUS 5
 #define TAM_SECTOR 5
-#define TAM_ALMUERZO 10
+#define TAM_ALMUERZO 100
 
 int main()
 {
@@ -21,9 +21,9 @@ int main()
     int contadorLegajo=0;
     int contadorAlmuerzo=0;
 
-    inicializarEmpleados(lista, TAM_EMPLEADOS);
     hardcode(lista, TAM_EMPLEADOS, sectores, TAM_SECTOR, menus, TAM_MENUS);
-    //inicializarAlmuerzos(almuerzos, TAM_ALMUERZO);
+    inicializarAlmuerzos(almuerzos, TAM_ALMUERZO);
+
     do
     {
         switch (menu())
@@ -32,38 +32,54 @@ int main()
 
             case 1:
                 system("cls");
-
-                //contadorLegajo++;
                 altaEmpleado(lista, TAM_EMPLEADOS, sectores, TAM_SECTOR, contadorLegajo);
                 contadorLegajo++;
                 break;
+
             case 2:
                 system("cls");
                 bajaEmpleado(lista, TAM_EMPLEADOS);
                 break;
+
             case 3:
                 system("cls");
                 modificarEmpleado(lista, TAM_EMPLEADOS, sectores, TAM_SECTOR);
                 break;
+
             case 4:
                 system("cls");
                 ordenarEmpleados(lista, TAM_EMPLEADOS);
                 mostrarEmpleados(lista, TAM_EMPLEADOS, sectores, TAM_SECTOR);
                 break;
+
             case 5:
                 system("cls");
                 altaAlmuerzo(almuerzos, TAM_ALMUERZO, lista,TAM_EMPLEADOS, menus,TAM_MENUS, contadorAlmuerzo);
                 contadorAlmuerzo++;
                 break;
+
             case 6:
                 system("cls");
                 mostrarAlmuerzo(lista, TAM_EMPLEADOS, menus, TAM_MENUS, almuerzos, TAM_ALMUERZO);
                 break;
+
             case 7:
                 system("cls");
                 mostrarEmpleadosPorSector (lista, TAM_EMPLEADOS, sectores, TAM_SECTOR);
                 break;
+
             case 8:
+                system("cls");
+                mostrarCantidadEmpleadosPorSector(lista, TAM_EMPLEADOS, sectores, TAM_SECTOR);
+                break;
+
+            case 9:
+                system("cls");
+
+                mostrarSectorConMasEmpleados(lista, TAM_EMPLEADOS, sectores, TAM_SECTOR);
+                break;
+
+            case 10:
 
                 getCharGenero(&respuesta, "Desea salir? Ingrese s/n: ","Opcion invalida. Reingrese: ", 'n', 's');
 

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1556994584 source:c:\users\user\desktop\otra practica abm\practica abm\empleados.c
+1557085752 source:c:\users\user\desktop\otra practica abm\practica abm\empleados.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -15,14 +15,14 @@
 	<string.h>
 	<conio.h>
 
-1556994538 source:c:\users\user\desktop\otra practica abm\practica abm\main.c
+1557085900 source:c:\users\user\desktop\otra practica abm\practica abm\main.c
 	<stdio.h>
 	<stdlib.h>
 	"empleados.h"
 	"input.h"
 	"funciones.h"
 
-1556994391 c:\users\user\desktop\otra practica abm\practica abm\empleados.h
+1557006625 c:\users\user\desktop\otra practica abm\practica abm\empleados.h
 
 1556644664 c:\users\user\desktop\otra practica abm\practica abm\funciones.h
 
