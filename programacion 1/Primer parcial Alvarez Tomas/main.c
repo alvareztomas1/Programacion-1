@@ -4,10 +4,10 @@
 #include "input.h"
 #include "funciones.h"
 
-#define TAM_EMPLEADOS 100
+#define TAM_EMPLEADOS 10
 #define TAM_MENUS 5
 #define TAM_SECTOR 5
-#define TAM_ALMUERZO 100
+#define TAM_ALMUERZO 500
 
 int main()
 {
@@ -21,15 +21,12 @@ int main()
     int contadorLegajo=0;
     int contadorAlmuerzo=0;
 
-    hardcode(lista, TAM_EMPLEADOS, sectores, TAM_SECTOR, menus, TAM_MENUS);
-    inicializarAlmuerzos(almuerzos, TAM_ALMUERZO);
+    hardcode(lista, TAM_EMPLEADOS, sectores, TAM_SECTOR, menus, TAM_MENUS, almuerzos, TAM_ALMUERZO);
 
     do
     {
         switch (menu())
         {
-
-
             case 1:
                 system("cls");
                 altaEmpleado(lista, TAM_EMPLEADOS, sectores, TAM_SECTOR, contadorLegajo);
@@ -80,8 +77,8 @@ int main()
                 break;
 
             case 10:
-
-                getCharGenero(&respuesta, "Desea salir? Ingrese s/n: ","Opcion invalida. Reingrese: ", 'n', 's');
+                system("cls");
+                validarDosChar(&respuesta, "Desea salir? Ingrese s/n: ","Opcion invalida. Reingrese: ", 'n', 's');
 
                 if (respuesta=='s')
                 {
@@ -90,11 +87,14 @@ int main()
 
                 system("cls");
                 break;
+
             default:
                 system("cls");
                 printf("\nOperacion invalida!!\n\n");
                 break;
         }
+
+        fflush(stdin);
 
     }while(seguir=='s');
     return 0;

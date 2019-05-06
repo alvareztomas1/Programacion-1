@@ -43,9 +43,10 @@ void inicializarEmpleados (eEmpleados emp[], int tamEmp)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void hardcode (eEmpleados emp[], int tamEmp, eSectores sec[], int tamSec, eMenus men[], int tamMen)
+void hardcode (eEmpleados emp[], int tamEmp, eSectores sec[], int tamSec, eMenus men[], int tamMen, eAlmuerzo alm[], int tamAlm)
 {
     inicializarEmpleados(emp, tamEmp);
+    inicializarAlmuerzos(alm, tamAlm);
 
     eEmpleados lista[]=
     {
@@ -56,7 +57,7 @@ void hardcode (eEmpleados emp[], int tamEmp, eSectores sec[], int tamSec, eMenus
         {4, "Cortes", "Julieta", 'f', 35000, {12,10,2010}, 2, 0},
     };
 
-    for (int i=0;i<tamEmp;i++)
+    for (int i=0;i<5;i++)
     {
         emp[i]=lista[i];
     }
@@ -70,7 +71,7 @@ void hardcode (eEmpleados emp[], int tamEmp, eSectores sec[], int tamSec, eMenus
         {5, "Seguridad"},
     };
 
-    for (int i=0;i<tamSec;i++)
+    for (int i=0;i<5;i++)
     {
         sec[i]=sectores[i];
     }
@@ -84,7 +85,7 @@ void hardcode (eEmpleados emp[], int tamEmp, eSectores sec[], int tamSec, eMenus
         {5, "Sopa", 50},
     };
 
-    for (int i=0;i<tamMen;i++)
+    for (int i=0;i<5;i++)
     {
         men[i]=menus[i];
     }
@@ -141,7 +142,7 @@ void altaEmpleado (eEmpleados emp[], int tamEmp, eSectores sec[], int tamSec, in
     {
         getString(emp[espacioLibre].apellido, "Ingrese apellido: ", "Supero los caracteres. Reingrese: ", 0, 51);
         getString(emp[espacioLibre].nombre, "Ingrese nombre: ", "Supero los caracteres. Reingrese: ", 0, 51);
-        getCharGenero(&emp[espacioLibre].sexo, "Ingrese sexo: ", "Solo m o f. Reingrese: ", 'f', 'm');
+        validarDosChar(&emp[espacioLibre].sexo, "Ingrese sexo: ", "Solo m o f. Reingrese: ", 'f', 'm');
         getFloat(&emp[espacioLibre].sueldo, "Ingrese sueldo: ", "No entra en el rango. Reingrese: ", 0, 100000);
         getInt(&emp[espacioLibre].fechaDeIngreso.dia, "Ingrese dia: ", "No entra en el rango. Reingrese: ", 1, 31);
         getInt(&emp[espacioLibre].fechaDeIngreso.mes, "Ingrese dia: ", "No entra en el rango. Reingrese: ", 1, 12);
@@ -185,7 +186,7 @@ void bajaEmpleado (eEmpleados emp[], int tamEmp)
     {
         printf("\nLegajo nro %d-%s, %s\n\n", emp[busquedaLegajo].legajo, emp[busquedaLegajo].apellido, emp[busquedaLegajo].nombre);
 
-        getCharGenero(&respuesta, "Desea continuar? Ingrese s/n: ", "Solo 's' o 'n'. Reingrese: ", 'n', 's');
+        validarDosChar(&respuesta, "Desea continuar? Ingrese s/n: ", "Solo 's' o 'n'. Reingrese: ", 'n', 's');
 
         if (respuesta=='s')
         {
@@ -224,7 +225,6 @@ void mostrarEmpleados (eEmpleados emp[], int tamEmp, eSectores sec[], int tamSec
     {
         if (emp[i].itsEmpty==0)
         {
-
             mostrarEmpleado(emp[i], sec, tamSec);
             contador++;
         }
@@ -297,7 +297,7 @@ void modificarEmpleado (eEmpleados emp[], int tamEmp, eSectores sec[], int tamSe
     else
     {
         printf("\nLegajo nro %d-%s, %s\n\n", emp[busquedaLegajo].legajo, emp[busquedaLegajo].apellido, emp[busquedaLegajo].nombre);
-        getCharGenero(&respuesta, "Desea continuar? Ingrese s/n: ", "Solo 's' o 'n'. Reingrese: ", 'n', 's');
+        validarDosChar(&respuesta, "Desea continuar? Ingrese s/n: ", "Solo 's' o 'n'. Reingrese: ", 'n', 's');
 
         if  (respuesta=='s')
         {
@@ -324,7 +324,7 @@ void modificarEmpleado (eEmpleados emp[], int tamEmp, eSectores sec[], int tamSe
                     printf("\nOperacion exitosa!!\n\n");
                     break;
                 case 3:
-                    getCharGenero(&emp[busquedaLegajo].sexo, "Ingrese sexo: ", "Solo m o f. Reingrese: ", 'f', 'm');
+                    validarDosChar(&emp[busquedaLegajo].sexo, "Ingrese sexo: ", "Solo m o f. Reingrese: ", 'f', 'm');
                     printf("\nOperacion exitosa!!\n\n");
                     break;
                 case 4:
@@ -382,7 +382,6 @@ int buscarAlmuerzoLibre (eAlmuerzo alm[], int tamAlm)
 
         if (alm[i].itsEmpty==1)
         {
-
             indiceAlmuerzo=i;
             break;
         }
@@ -422,7 +421,7 @@ void altaAlmuerzo (eAlmuerzo alm[], int tamAlm, eEmpleados emp[], int tamEmp, eM
         else
         {
             printf("\nLegajo nro %d-%s, %s\n\n", emp[busquedaLegajo].legajo, emp[busquedaLegajo].apellido, emp[busquedaLegajo].nombre);
-            getCharGenero(&respuesta, "Desea continuar? Ingrese s/n: ","Solo 's' o 'n'. Reingrese: ", 's', 'n');
+            validarDosChar(&respuesta, "Desea continuar? Ingrese s/n: ","Solo 's' o 'n'. Reingrese: ", 's', 'n');
 
             if (respuesta=='s')
             {
@@ -461,6 +460,8 @@ void altaAlmuerzo (eAlmuerzo alm[], int tamAlm, eEmpleados emp[], int tamEmp, eM
 
 void mostrarAlmuerzo (eEmpleados emp[], int tamEmp, eMenus men[],int tamMen, eAlmuerzo alm[], int tamAlm)
 {
+    int contador=0;
+
     printf("ALMUERZO    LEGAJO   APELLIDO      NOMBRE       MENU        FECHA\n");
 
     for (int i=0;i<tamMen;i++)
@@ -474,13 +475,18 @@ void mostrarAlmuerzo (eEmpleados emp[], int tamEmp, eMenus men[],int tamMen, eAl
 
                 for (int k=0;k<tamEmp;k++)
                 {
-                    if (emp[k].legajo==alm[j].legajoEmpleado && emp[k].itsEmpty==0)
+                    if (emp[k].legajo==alm[j].legajoEmpleado && emp[k].itsEmpty==0 && alm[j].itsEmpty==0)
                     {
                          printf("  %04d       %04d    %8s    %8s     %8s     %02d/%02d/%02d\n", alm[j].idAlmuerzo, emp[k].legajo, emp[k].apellido, emp[k].nombre, men[i].desc, alm[j].fechaDeAlmuerzo.dia, alm[j].fechaDeAlmuerzo.mes, alm[j].fechaDeAlmuerzo.anio);
+                         contador++;
                     }
                 }
             }
         }
+    }
+    if (contador==0)
+    {
+        printf("\nNo hay empleado que listar!!\n\n");
     }
 }
 
@@ -538,8 +544,6 @@ void mostrarSectorConMasEmpleados (eEmpleados emp[], int tamEmp, eSectores sec[]
     for (int i=0;i<tamSec;i++)
     {
         contador=0;
-
-
 
         for (int j=0;j<tamEmp;j++)
         {
