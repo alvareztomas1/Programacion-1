@@ -1,0 +1,118 @@
+# depslib dependency file v1.0
+1557101578 source:c:\users\user\desktop\programacion-1\programacion 1\primer parcial alvarez tomas\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	"empleados.h"
+	"input.h"
+	"funciones.h"
+
+1557100883 c:\users\user\desktop\programacion-1\programacion 1\primer parcial alvarez tomas\empleados.h
+
+1556556608 c:\users\user\desktop\programacion-1\programacion 1\primer parcial alvarez tomas\input.h
+
+1557098696 c:\users\user\desktop\programacion-1\programacion 1\primer parcial alvarez tomas\funciones.h
+
+1557097862 source:c:\users\user\desktop\programacion-1\programacion 1\primer parcial alvarez tomas\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+
+1556556608 source:c:\users\user\desktop\programacion-1\programacion 1\primer parcial alvarez tomas\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1557101252 source:c:\users\user\desktop\programacion-1\programacion 1\primer parcial alvarez tomas\main.c
+	<stdio.h>
+	<stdlib.h>
+	"empleados.h"
+	"input.h"
+	"funciones.h"
+
+1557152159 source:d:\primer parcial alvarez tomas\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	"empleados.h"
+	"input.h"
+	"funciones.h"
+
+1557152067 d:\primer parcial alvarez tomas\empleados.h
+
+1557142030 d:\primer parcial alvarez tomas\input.h
+
+1557142030 d:\primer parcial alvarez tomas\funciones.h
+
+1557142030 source:d:\primer parcial alvarez tomas\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+
+1557142030 source:d:\primer parcial alvarez tomas\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1557152093 source:d:\primer parcial alvarez tomas\main.c
+	<stdio.h>
+	<stdlib.h>
+	"empleados.h"
+	"input.h"
+	"funciones.h"
+
+1557142032 source:e:\hecho en parcial\parcial hecho en clase\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+
+1557142032 source:e:\hecho en parcial\parcial hecho en clase\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1557284976 source:e:\hecho en parcial\parcial hecho en clase\main.c
+	<stdio.h>
+	<stdlib.h>
+	"socios.h"
+	"input.h"
+	"funciones.h"
+
+1557261662 e:\hecho en parcial\parcial hecho en clase\empleados.h
+
+1557142032 e:\hecho en parcial\parcial hecho en clase\input.h
+
+1557142032 e:\hecho en parcial\parcial hecho en clase\funciones.h
+
+1557261856 source:e:\hecho en parcial\parcial hecho en clase\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	"empleados.h"
+	"input.h"
+	"funciones.h"
+
+1557284990 source:e:\hecho en parcial\parcial hecho en clase\socios.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	"socios.h"
+	"input.h"
+	"funciones.h"
+
+1557284824 e:\hecho en parcial\parcial hecho en clase\socios.h
+

@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1557953729 source:c:\users\user\desktop\tp 2\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"empleados.h"
+	"input.h"
+
+1557945730 c:\users\user\desktop\tp 2\empleados.h
+
+1557866361 source:c:\users\user\desktop\tp 2\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1557953804 source:c:\users\user\desktop\tp 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"empleados.h"
+
+1557866361 c:\users\user\desktop\tp 2\input.h
+
