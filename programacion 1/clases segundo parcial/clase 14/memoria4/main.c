@@ -33,6 +33,7 @@ int main()
     printf("\n\n");
 
      pauxiliar = (int*)realloc(pnum, sizeof(int) * 10);
+     printf("\nSe agrando el array\n");
     /* PUEDE PASAR QUE LOS OTROS ESPACIOS AGREGADOS ESTEN OCUPADOS POR EJEMPLO. DEVUELVE NULL
        SI TENEMOS SUERTE TE DEVUELVE LA MISMA DIRECCION DE MEMORIA
        PUEDE PASAR QUE TRATE DE CONSEGUIRTE ESE ESPACIO EN OTRO LADO
@@ -61,6 +62,13 @@ int main()
         }
     }
 
+    pnum = (int*)realloc(pnum, sizeof(int)*5);
+    printf("\n\nSe achico el array\n");
+
+    for (int i=0; i<5; i++)
+    {
+        printf("%d ", *(pnum+i));
+    }
 
 
     printf("\n\n");
