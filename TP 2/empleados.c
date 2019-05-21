@@ -5,7 +5,7 @@
 #include <ctype.h>
 #include "empleados.h"
 #include "input.h"
-
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 int menu()
 {
     int opcion;
@@ -21,7 +21,7 @@ int menu()
 
     return opcion;
 }
-
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 int subMenu()
 {
     int respuesta;
@@ -35,7 +35,7 @@ int subMenu()
 
     return respuesta;
 }
-
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 int inicializarEmpleados (eEmpleado emp[], int tam)
 {
     int todoOk=-1;
@@ -51,7 +51,7 @@ int inicializarEmpleados (eEmpleado emp[], int tam)
 
     return todoOk;
 }
-
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 int buscarLibre (eEmpleado emp[], int tam)
 {
     int espacioLibre=-2;
@@ -70,7 +70,7 @@ int buscarLibre (eEmpleado emp[], int tam)
 
     return espacioLibre;
 }
-
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 int buscarEmpleado (eEmpleado emp[], int tam, int id)
 {
     int indice=-1;
@@ -82,6 +82,7 @@ int buscarEmpleado (eEmpleado emp[], int tam, int id)
             if (emp[i].id==id && emp[i].itsEmpty==0)
             {
                 indice=i;
+
                 break;
             }
         }
@@ -90,10 +91,10 @@ int buscarEmpleado (eEmpleado emp[], int tam, int id)
 
     return indice;
 }
-
-int altaEmpleado (eEmpleado emp[], int tam, int contador)
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+void altaEmpleado (eEmpleado emp[], int tam, int contador)
 {
-    int todoOk=-1;
+
     int espacioLibre=-2;
 
     if (tam !=0)
@@ -123,84 +124,97 @@ int altaEmpleado (eEmpleado emp[], int tam, int contador)
         emp[espacioLibre].id+=contador;
         emp[espacioLibre].itsEmpty=0;
 
-        todoOk=0;
+
+
 
     }
-
-
-
-    return todoOk;
 }
-
-int bajaEmpleado (eEmpleado emp[], int tam)
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+void bajaEmpleado (eEmpleado emp[], int tam)
 {
     int id;
     int busquedaId;
-    char salida;
-    int todoOk=-1;
+    char salir;
 
-    printf("Ingrese id: ");
-    scanf("%d", &id);
+    int sinEmpleados=0;
 
-    busquedaId=buscarEmpleado(emp, tam, id);
-
-    if (busquedaId!=-1)
+    for (int i=0;i<tam;i++)
     {
-        printf("Legajo %d-%s, %s\n\n", emp[busquedaId].id, emp[busquedaId].lastName, emp[busquedaId].lastName);
-        printf("Desea continuar? Ingrese s/n: ");
-        salida=getche();
-        printf("\n");
-        system("pause");
-
-        if (tolower(salida)=='s')
+        if (emp[i].itsEmpty==0)
         {
-            emp[busquedaId].itsEmpty=1;
-            todoOk=0;
-        }
-        else
-        {
-            printf("\nOperacion cancelada!!\n\n");
-        }
+            mostrarEmpleados(emp, tam);
+            printf("\nIngrese id: ");
+            scanf("%d", &id);
 
+            busquedaId=buscarEmpleado(emp, tam, id);
+
+            if (busquedaId==-1)
+            {
+                printf("Legajo inexistente en el sistema!!\n");
+            }
+            else
+            {
+                printf("Legajo %d-%s, %s\n\n", emp[busquedaId].id, emp[busquedaId].lastName, emp[busquedaId].lastName);
+                validarDosChar(&salir, "Desea continuar? Ingrese s/n: ", "Solo s/n: ", 's', 'n');
+
+                if (tolower(salir)=='s')
+                {
+                    emp[busquedaId].itsEmpty=1;
+                    printf("\nOperacion exitosa!!\n\n");
+                    sinEmpleados++;
+                }
+                else
+                {
+                    printf("\nOperacion cancelada!!\n\n");
+                    return;
+                }
+
+            }
+        }
     }
-    else
+    if (sinEmpleados==0)
     {
-
-        printf("Legajo inexistente en el sistema!!\n");
+        printf("\nNo hay empleados que dar de baja!!\n\n");
     }
 
-    return todoOk;
+
 }
-
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 int mostrarEmpleados (eEmpleado emp[], int tam)
 {
     int todoOk=-1;
+    int contador=0;
 
+    printf("\nID   APELLIDO   NOMBRE  SUELDO   SECTOR\n");
     for (int i=0;i<5;i++)
     {
         if (emp[i].itsEmpty==0)
         {
-            printf("ID   APELLIDO   NOMBRE  SUELDO   SECTOR\n");
-            printf("%d   %-s    %-s   %.2f    %3d\n\n", emp[i].id, emp[i].lastName, emp[i].name, emp[i].salary, emp[i].sector);
+
+            printf("%d   %-s    %-s   %.2f    %3d\n", emp[i].id, emp[i].lastName, emp[i].name, emp[i].salary, emp[i].sector);
             todoOk=0;
+            contador++;
         }
+
+    }
+    if (contador==0)
+    {
+        printf("\nNo hay empleados que listar!!\n\n");
     }
 
     return todoOk;
 }
-
-
-/*
-int ordenarEmpleados (eEmpleado emp[], int tam)
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+void ordenarEmpleados (eEmpleado emp[], int tam)
 {
-    int todoOk=-1;
+
     eEmpleado aux;
 
     for (int i=0;i<tam-1;i++)
     {
         for (int j=i+1;j<tam;j++)
         {
-            if(stricmp(emp[i].name, emp[j].name)>0)
+            if(stricmp(emp[i].name, emp[j].name)<0)
             {
                 aux=emp[i];
                 emp[i]=emp[j];
@@ -212,11 +226,117 @@ int ordenarEmpleados (eEmpleado emp[], int tam)
                 emp[i]=emp[j];
                 emp[j]=aux;
             }
+        }
+    }
+}
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+void modificarEmpleado (eEmpleado emp[], int tam)
+{
+    int id;
+    int busquedaId=0;
+    char salir;
+    int opcion;
+    int sinEmpleados=0;
 
+    for (int i=0;i<tam;i++)
+    {
+        if (emp[i].itsEmpty==0)
+        {
+            sinEmpleados++;
+            mostrarEmpleados(emp, tam);
+            getInt(&id, "Ingrese id: ", "No entra en el rango. Reingrese: ", 1, 10000);
+
+            busquedaId=buscarEmpleado(emp, tam, id);
+
+            if (busquedaId==-1)
+            {
+                printf("\nLegajo inexistente en el sistema!!\n\n");
+
+            }
+            else
+            {
+                printf("\nId nro %d-%s, %s\n\n", emp[busquedaId].id, emp[busquedaId].lastName, emp[busquedaId].name);
+
+                validarDosChar(&salir, "Desea continuar? Ingrese s/n: ", "Solo s/n: ", 's', 'n');
+
+                if (salir=='s')
+                {
+                    printf("1-Apellido\n");
+                    printf("2-Nombre\n");
+                    printf("3-Salario\n");
+                    printf("4-Sector\n");
+                    getInt(&opcion, "Ingrese opcion: ", "No entro en el rango, reingrese: ", 1, 5);
+
+                    switch (opcion)
+                    {
+                        case 1:
+                            getString(emp[busquedaId].lastName, "Ingrese apellido: ", "No entra en el rango. Reingrese: ", 0, 51);
+                            break;
+                        case 2:
+                            getString(emp[busquedaId].name, "Ingrese nombre: ", "No entra en el rango. Reingrese: ", 0, 51);
+                            break;
+                        case 3:
+                            getFloat(&emp[busquedaId].salary, "Ingrese salario: ", "No entra en el rango. Reingrese: ", 0, 1000000);
+                            break;
+                        case 4:
+                            getInt(&emp[busquedaId].sector, "Ingrese sector: ", "No entra en el rango. Reingrese: ", 1, 5);
+                            break;
+                    }
+                        printf("\nOperacion exitosa!!\n\n");
+
+                }
+                else
+                {
+                    printf("\nOperacion cancelada!!\n\n");
+                }
+
+
+            }
+        }
+    }
+    if (sinEmpleados==0)
+    {
+        printf("\nNo hay empleados que modificar!!\n\n");
+    }
+
+
+
+}
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+void informeSalarios (eEmpleado emp[], int tam)
+{
+    int total=0;
+    int contadorSalario=0;
+    int contadorEmpleados=0;
+    int promedio;
+
+    for (int i=0;i<tam;i++)
+    {
+        if (emp[i].itsEmpty==0)
+        {
+            total=emp[i].salary+total;
+            contadorEmpleados++;
+        }
+
+    }
+    if (contadorEmpleados==0)
+    {
+        printf("\nNo hay emleados dados de alta!!\n\n");
+        return;
+    }
+
+    promedio=total/contadorEmpleados;
+
+    for (int i=0;i<tam;i++)
+    {
+        if (emp[i].salary>promedio)
+        {
+            contadorSalario++;
         }
     }
 
 
-    return todoOk;
+    printf("El total de salarios es: %d. Con un promedio de %d y %d personas superandolo\n",total,  promedio, contadorSalario);
+
 }
-*/
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

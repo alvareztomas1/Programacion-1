@@ -19,8 +19,14 @@ int subMenu();
 
 int inicializarEmpleados (eEmpleado emp[], int tam);
 
-int altaEmpleado (eEmpleado emp[], int tam, int contador);
+void altaEmpleado (eEmpleado emp[], int tam, int contador);
 
-int bajaEmpleado (eEmpleado emp[], int tam);
+void modificarEmpleado (eEmpleado emp[], int tam);
+
+void bajaEmpleado (eEmpleado emp[], int tam);
 
 int mostrarEmpleados (eEmpleado emp[], int tam);
+
+void ordenarEmpleados (eEmpleado emp[], int tam);
+
+void informeSalarios (eEmpleado emp[], int tam);

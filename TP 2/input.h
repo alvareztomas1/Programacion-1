@@ -47,4 +47,6 @@ int getChar (char* input, char *message, char *eMessage, char lowLimit, char hiL
 int getString (char* input, char* message, char *eMessage, int lowLimit, int hiLimit);
 
 
+void validarDosChar(char* input, char message[], char eMessage[], char lowLimit, char hiLimit);
+
 
