@@ -1,0 +1,6 @@
+//ESTA TE SIRVE PARA MODIFICAR
+fseek ( ptr , (long) (-1)*sizeof (struct x) , SEEK_CUR );
+
+
+//TE DEVUELVE LA POSICION DEL INDICADOR DE POSICION
+long ftell (FILE * arch );

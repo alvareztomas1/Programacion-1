@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1558537328 source:c:\users\alumno\desktop\programacion-1\programacion 1\clases segundo parcial\clase 15\abml\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	"input.h"
+
+1558524536 c:\users\alumno\desktop\programacion-1\programacion 1\clases segundo parcial\clase 15\abml\input.h
+
+1558524536 source:c:\users\alumno\desktop\programacion-1\programacion 1\clases segundo parcial\clase 15\abml\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1558537422 source:c:\users\alumno\desktop\programacion-1\programacion 1\clases segundo parcial\clase 15\abml\main.c
+	<stdio.h>
+	<stdlib.h>
+	"empleados.h"
+
+1558536938 c:\users\alumno\desktop\programacion-1\programacion 1\clases segundo parcial\clase 15\abml\empleados.h
+
