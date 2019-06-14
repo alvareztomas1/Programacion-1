@@ -20,7 +20,7 @@ int getInt (int* input, char *message, char *eMessage, int lowLimit, int hiLimit
  * \return Si obtuvo el numero [0] si no [-1]
  *
  */
-int getFloat (float* input, char *message, char *eMessage, int lowLimit, int hiLimit);
+ int getFloat (float* input, char *message, char *eMessage, int lowLimit, int hiLimit);
 
 /**
  * \brief Solicita un caracter al usuario y lo valida

@@ -4,72 +4,98 @@
 #include <conio.h>
 #include <ctype.h>
 #include "empleados.h"
+#include "input.h"
 
 #define TAM_EMPLEADOS 5
 
 int main()
 {
-    eEmpleado lista[TAM_EMPLEADOS]
-    =
-    {
-        {1, "Tomas", "Alvarez", 50000, 1,0 },
-        {2, "Florencia", "Cortes", 30000, 4, 0},
-        {3, "Julieta", "Cortes", 35000, 3, 0},
-        {4, "Bonavena", "Julio", 60000, 2, 0},
-        {5, "Ramon", "Abila", 30000, 1, 0},
-    };
+    eEmpleado lista[TAM_EMPLEADOS];
 
     char seguir='s';
     char salir;
     int contadorLegajo=1;
+    int error;
 
-
-
-    //inicializarEmpleados(lista, TAM_EMPLEADOS);
+    inicializarEmpleados(lista, TAM_EMPLEADOS);
 
     do
     {
-
         switch (menu())
         {
-
             case 1:
-                altaEmpleado(lista, TAM_EMPLEADOS, contadorLegajo);
-                contadorLegajo++;
+                error=altaEmpleado(lista, TAM_EMPLEADOS, contadorLegajo);
+
+                if (error==1)
+                {
+                    printf("\nNo hay espacio en el sistema!!\n\n");
+                }
+                else
+                {
+                    contadorLegajo++;
+                }
 
                 system("pause");
                 system("cls");
                 break;
 
             case 2:
-                modificarEmpleado(lista, TAM_EMPLEADOS);
+                system("cls");
+                error=modificarEmpleado(lista, TAM_EMPLEADOS);
+
+                if (error==1)
+                {
+                    printf("\nNo hay empleados dados de alta!!\n\n");
+                }
+
                 system("pause");
                 system("cls");
                 break;
 
            case 3:
-                bajaEmpleado(lista, TAM_EMPLEADOS);
+                error=bajaEmpleado(lista, TAM_EMPLEADOS);
+
+                if (error==1)
+                {
+                    printf("\nNo hay empleados dados de alta!!\n\n");
+                }
+
                 system("pause");
                 system("cls");
                 break;
 
             case 4:
-                switch (subMenu())
+                switch (subMenuInformes())
                 {
 
                     case 1:
+                        system("cls");
                         ordenarEmpleados(lista, TAM_EMPLEADOS);
-                        mostrarEmpleados(lista, TAM_EMPLEADOS);
+                        error=mostrarEmpleados(lista, TAM_EMPLEADOS);
+
+                        if (error==1)
+                        {
+                            printf("\nNo hay empleados que listar!!\n\n");
+                        }
                         system("pause");
                         system("cls");
                         break;
+
                     case 2:
-                        informeSalarios (lista, TAM_EMPLEADOS);
+                        system("cls");
+                        error=informeSalarios (lista, TAM_EMPLEADOS);
+
+                        if (error==1)
+                        {
+                            printf("\nNo hay empleados dados de alta!!\n\n");
+                        }
                         system("pause");
                         system("cls");
                         break;
+
                     case 3:
                         break;
+
                     default:
                         printf("\nOpcion invalida!!\n\n");
                         break;
@@ -92,7 +118,9 @@ int main()
                 break;
         }
 
+        fflush(stdin);
     }while (seguir=='s');
-    fflush(stdin);
+
+
     return 0;
 }

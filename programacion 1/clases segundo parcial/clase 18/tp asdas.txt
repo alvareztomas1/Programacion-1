@@ -1,0 +1,93 @@
+
+primer opcion del TP se carga con fprintf
+segunda opcion se hace con fread
+
+********************************************************************************************
+
+PARA LOS ARCHIVOS USEMOS W Y WB SI ES BINARIO EN EL 8 Y 9
+(OSEA NO HACER LA VALIDACION DE LA LECTURA SI YA EXISTE)
+OLVIDEMOS W+ Y ESAS COSAS
+
+
+PARA LO ABRIS EN EL PUNTO 1 Y 2 USAS R Y RB TOTAL EN ESTE SOLO LEES
+
+
+********************************************************************************************
+
+
+-primer punto										   																					
+											   
+while feof										   
+	fscanf ()									   
+	newEmp										   
+	set	    									   
+	ll_add										   
+								                           
+-punto 2										   
+haces lo mismo pero con fread								   
+
+-punto 3
+el alta se hace con teclado
+
+//EN ESTOS 3 PUNTOS HAY QUE USAR ll_add											   *
+			
+									*FUNCION*
+PARA LISTAR A LOS EMPLEADOS RECORRO LA LISTA CON UN FOR for ( int = 0; i<ll_len ;i++ )
+ UNA VEZ QUE HACES ESTO LE PASAS LOS
+INDICES A GET, DE ESTA FORMA OBTENES LAS DIRECCIONES, POR ENDE LOS DATOS
+
+
+PARA ORDENAR for(i=0; i<ll_len;i++=
+		for(j=i+1; j<ll_len;j++=
+		un get para i y otro para j
+		creo que despues los if o antes
+
+
+	
+
+PUNTO 8 RECORRES LA LISTA HACES GET Y POR CADA UNO HACES FPRINTF
+
+PUNTO 9 RECORRES LA LISTA HACES GET Y LO ESCRIBIS CON FWRITE EN EL ARCHIVO
+
+							   
+****************************************************************************************************
+----USO DE FUNCIONES----
+
+
+usando LinkedList* ll_newLinkedList(void); //ESTO YA ESTA EN EL MAIN
+
+
+
+
+void ll_deleteLinkedList(LinkedList* self) 
+cuando no usamos mas la linkedlist hacemos esto para liberar la memoria
+
+
+
+void ll_add(LinkedList* self , void* element) ->Agrega un elemento al final de LinkedList
+es igual a la que vimos en la clase //LA VAMOS A USAR EN EL ALTA OPCION 1 Y OPCION 3
+//LE PASAS LA LISTA QUE CREAS Y EL SEGUNDO PARAMETRO EL ELEMENTO CREADO OSEA UN PUNTERO DEL TIPO 
+LLAMANDO A LA FUNCION EPMLOYEE NEW CREAS Y SE LO PASAS
+
+
+void* ll_get(LinkedList* self , int index) ->Retorna un puntero al elemento que se encuentra en el
+índice especificado. /*LE PASAS EL INDICE DEL EMPLEADO, OBTENES ESA DIRECCION DE MEMORIA
+                      DE ESTA FORMA OBTENES EL DATO PARA MODIFICARLO*/
+
+
+
+void ll_remove(LinkedList* self , int index) ->Elimina un elemento en LinkedList, en el índice
+especificado. /*ACA NO HAY ITSEMPTY OSEA BUSCAS A LA PERSONA Y OTENER LA DIRECCION CON GET
+                LO MOSTRAS PARA ESTAR SEGURO DE QUE LO QUERES ELIMINAR USAS ESTA FUNION*/
+
+
+int ll_len(LinkedList* self ) ->Retorna el tamaño del LinkedList
+			
+****************************************************************************************************
+
+
+EL CONTROLADOR SE ENCARGA DE IR DICIENDO QUE HAY QUE HACER (SON LOS QUE VAN EN EL CASO DEL SWITCH)
+
+LAS DEMAS FUNCIONES DEBERAN HACER LO QUE DICE ESTA
+
+
