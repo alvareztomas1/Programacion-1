@@ -116,3 +116,38 @@
 
 1557284824 e:\hecho en parcial\parcial hecho en clase\socios.h
 
+1558793310 source:c:\users\alvar\desktop\programacion-1\parcial bien\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+
+1558793310 source:c:\users\alvar\desktop\programacion-1\parcial bien\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1558793310 source:c:\users\alvar\desktop\programacion-1\parcial bien\main.c
+	<stdio.h>
+	<stdlib.h>
+	"socios.h"
+	"input.h"
+	"funciones.h"
+
+1558793310 c:\users\alvar\desktop\programacion-1\parcial bien\socios.h
+
+1558793310 c:\users\alvar\desktop\programacion-1\parcial bien\input.h
+
+1558793310 c:\users\alvar\desktop\programacion-1\parcial bien\funciones.h
+
+1558793310 source:c:\users\alvar\desktop\programacion-1\parcial bien\socios.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	"socios.h"
+	"input.h"
+	"funciones.h"
+
