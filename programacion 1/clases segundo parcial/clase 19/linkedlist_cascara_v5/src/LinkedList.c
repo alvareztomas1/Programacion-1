@@ -168,7 +168,6 @@ int ll_add(LinkedList* this, void* pElement)
     int returnAux = -1;
     Node* nuevoNodo = (Node*)malloc(sizeof(Node));
     Node* nodoPrevio;
-    int indiceFinal;
 
     if( this != NULL )
     {
@@ -317,14 +316,12 @@ int ll_clear(LinkedList* this)
 
     if ( this != NULL )
     {
-        for ( int i = 0; i < ll_len(this); i++ )
+        for ( int i = ll_len(this); i > 0; i-- )
         {
             pNode = getNode(this, i);
-
-            pNode->pElement = NULL;
-
+            free(pNode);
+            this->size--;
         }
-
 
         returnAux = 0;
     }
@@ -347,11 +344,9 @@ int ll_deleteLinkedList(LinkedList* this)
 
     if ( this != NULL )
     {
-        for ( int i = 0; i < ll_len(this); i++ )
+        for ( int i = ll_len(this); i > 0; i-- )
         {
             pNode = getNode(this, i);
-
-            pNode->pElement = NULL;
             free(pNode);
         }
 
@@ -374,6 +369,23 @@ int ll_deleteLinkedList(LinkedList* this)
 int ll_indexOf(LinkedList* this, void* pElement)
 {
     int returnAux = -1;
+    Node* pNode;
+
+    if ( this != NULL )
+    {
+
+        for( int i = 0; i<ll_len(this); i++ )
+        {
+            pNode = getNode(this, i);
+
+            if ( pNode->pElement == pElement )
+            {
+                returnAux = i;
+            }
+        }
+
+
+    }
 
     return returnAux;
 }
@@ -390,8 +402,17 @@ int ll_isEmpty(LinkedList* this)
 {
     int returnAux = -1;
 
+
     if ( this != NULL )
     {
+        if ( this->size > 0)
+        {
+            returnAux = 0;
+        }
+        else
+        {
+            returnAux = 1;
+        }
 
     }
 
@@ -442,6 +463,7 @@ void* ll_pop(LinkedList* this,int index)
 int ll_contains(LinkedList* this, void* pElement)
 {
     int returnAux = -1;
+
 
     return returnAux;
 }
@@ -504,7 +526,34 @@ LinkedList* ll_clone(LinkedList* this)
  */
 int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
 {
-    int returnAux =-1;
+    int returnAux = -1;
+    void* auxNode;
+    void* nodeI;
+    void* nodeJ;
+
+    if( this != NULL && pFunc != NULL && order >= 0 )
+    {
+        for( int i = 0; i < ll_len(this)-1; i++ )
+        {
+            for( int j = i+1; j < ll_len(this); j++ )
+            {
+                nodeI = ll_get(this, i);
+                nodeJ = ll_get(this, j);
+
+                if( nodeI != NULL && nodeJ != NULL )
+                {
+                    if( pFunc(nodeI, nodeJ) == order )
+                    {
+                        auxNode = nodeI;
+                        nodeI = nodeJ;
+                        nodeJ = auxNode;
+                        returnAux = 0;
+                    }
+                }
+            }
+        }
+    }
+
 
     return returnAux;
 
