@@ -423,7 +423,11 @@ int ll_isEmpty(LinkedList* this)
  *
  * \param this LinkedList* Puntero a la lista
  * \param nodeIndex int Ubicacion donde se agregara el nuevo elemento
- * \param pElement void* Puntero al nuevo elemento
+ * \param pElement void* Punt$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+ero al nuevo elemento
  * \return int Retorna  (-1) Error: si el puntero a la lista es NULL o (si el indice es menor a 0 o mayor al len de la lista)
                         ( 0) Si funciono correctamente
  *
@@ -528,31 +532,32 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
 {
     int returnAux = -1;
     void* auxNode;
-    void* nodeI;
-    void* nodeJ;
 
-    if( this != NULL && pFunc != NULL && order >= 0 )
+    if( this != NULL && pFunc != NULL && order >= 0 && order <= 1)
     {
         for( int i = 0; i < ll_len(this)-1; i++ )
         {
             for( int j = i+1; j < ll_len(this); j++ )
             {
-                nodeI = ll_get(this, i);
-                nodeJ = ll_get(this, j);
-
-                if( nodeI != NULL && nodeJ != NULL )
+                if( order == 1 && pFunc(ll_get(this,i), ll_get(this,j)) > 0 )
                 {
-                    if( pFunc(nodeI, nodeJ) == order )
-                    {
-                        auxNode = nodeI;
-                        nodeI = nodeJ;
-                        nodeJ = auxNode;
-                        returnAux = 0;
-                    }
+                    auxNode = ll_get(this,i);
+                    ll_set(this, i, ll_get(this, j));
+                    ll_set(this, j, auxNode);
+
+                }
+                else if( order == 0 && pFunc(ll_get(this,i), ll_get(this,j)) < 0 )
+                {
+                    auxNode = ll_get(this,i);
+                    ll_set(this, i, ll_get(this, j));
+                    ll_set(this, j, auxNode);
                 }
             }
         }
+
+        returnAux = 0;
     }
+
 
 
     return returnAux;
